@@ -10,5 +10,4 @@ public class MissionService {
     @Autowired
     private MissionRepository missionRepository;
 
-
 }
