@@ -30,6 +30,6 @@ public class User {
     @ManyToMany(mappedBy = "users")
     private Set<Mission> missions = new HashSet<>();
 
-    @ManyToMany(mappedBy = "users")
-    private Set<Skill> skills = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<SkillsUsers> skills = new HashSet<>();
 }
