@@ -1,6 +1,6 @@
 package com.riwi.TechQuest.domain.persistence;
 
-import com.riwi.TechQuest.domain.model.SkillsUsers;
+import com.riwi.TechQuest.domain.modelIntermediate.SkillsUsers;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,8 @@
-package com.riwi.TechQuest.domain.model;
+package com.riwi.TechQuest.domain.modelIntermediate;
 
+
+import com.riwi.TechQuest.domain.model.Mission;
+import com.riwi.TechQuest.domain.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,11 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MissionsSkills {
+public class MissionsUsers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +25,6 @@ public class MissionsSkills {
     private Mission mission;
 
     @ManyToOne
-    @JoinColumn(name = "skills_id")
-    private Skill skill;
+    @JoinColumn(name = "users_id")
+    private User user;
 }

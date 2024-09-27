@@ -1,6 +1,8 @@
 package com.riwi.TechQuest.domain.model;
 
 
+import com.riwi.TechQuest.domain.modelIntermediate.MissionsSkills;
+import com.riwi.TechQuest.domain.modelIntermediate.SkillsUsers;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,10 +27,10 @@ public class Skill {
 
     private String description;
 
-    @OneToMany(mappedBy = "skill")
+    @OneToMany(mappedBy = "skill", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SkillsUsers> users = new HashSet<>();
 
-    @OneToMany(mappedBy = "skill")
+    @OneToMany(mappedBy = "skill", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MissionsSkills> missions = new HashSet<>();
 
 }

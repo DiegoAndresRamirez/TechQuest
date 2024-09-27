@@ -1,5 +1,7 @@
-package com.riwi.TechQuest.domain.model;
+package com.riwi.TechQuest.domain.modelIntermediate;
 
+import com.riwi.TechQuest.domain.model.Skill;
+import com.riwi.TechQuest.domain.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,11 +19,11 @@ public class SkillsUsers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "skill_id")
     private Skill skill;
 

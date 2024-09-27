@@ -1,5 +1,7 @@
 package com.riwi.TechQuest.domain.model;
 
+import com.riwi.TechQuest.domain.modelIntermediate.MissionsUsers;
+import com.riwi.TechQuest.domain.modelIntermediate.SkillsUsers;
 import com.riwi.TechQuest.utils.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,9 +29,9 @@ public class User {
 
     private Role role;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MissionsUsers> missions = new HashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SkillsUsers> skills = new HashSet<>();
 }

@@ -1,5 +1,7 @@
 package com.riwi.TechQuest.domain.model;
 
+import com.riwi.TechQuest.domain.modelIntermediate.MissionsSkills;
+import com.riwi.TechQuest.domain.modelIntermediate.MissionsUsers;
 import com.riwi.TechQuest.utils.enums.Difficulty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
