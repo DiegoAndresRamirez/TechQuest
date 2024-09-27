@@ -28,11 +28,7 @@ public class Skill {
     @OneToMany(mappedBy = "skill")
     private Set<SkillsUsers> users = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(
-            name = "Skills_Missions",
-            joinColumns = @JoinColumn(name = "mission_id"),
-            inverseJoinColumns = @JoinColumn(name = "skill_id")
-    )
-    private Set<Mission> missions = new HashSet<>();
+    @OneToMany(mappedBy = "skill")
+    private Set<MissionsSkills> missions = new HashSet<>();
+
 }

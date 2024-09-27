@@ -27,8 +27,8 @@ public class User {
 
     private Role role;
 
-    @ManyToMany(mappedBy = "users")
-    private Set<Mission> missions = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<MissionsUsers> missions = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     private Set<SkillsUsers> skills = new HashSet<>();

@@ -1,9 +1,6 @@
 package com.riwi.TechQuest.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +17,11 @@ public class MissionsSkills {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private 
+    @ManyToOne
+    @JoinColumn(name = "missions_id")
+    private Mission mission;
+
+    @ManyToOne
+    @JoinColumn(name = "skills_id")
+    private Skill skill;
 }

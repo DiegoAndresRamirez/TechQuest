@@ -27,15 +27,9 @@ public class Mission {
 
     private Difficulty difficulty;
 
+    @OneToMany(mappedBy = "mission")
+    private Set<MissionsSkills> skills;
 
-    @ManyToMany
-    @JoinTable(
-            name = "Users_Missions",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "mission_id")
-    )
-    private Set<User> users = new HashSet<>();
-
-    @ManyToMany(mappedBy = "missions")
-    private Set<Skill> skills = new HashSet<>();
+    @OneToMany(mappedBy = "mission")
+    private Set<MissionsUsers> users = new HashSet<>();
 }
